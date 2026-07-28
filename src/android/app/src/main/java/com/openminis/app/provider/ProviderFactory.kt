@@ -99,7 +99,7 @@ object ProviderFactory {
                     basePath = "https://openrouter.ai/api/v1",
                     extraHeaders = mapOf(
                         "HTTP-Referer" to "https://github.com/OpenMinis/OpenMinis",
-                        "X-Title" to "DroidPilot App",
+                        "X-Title" to "Axisynx App",
                     ),
                 )
             }

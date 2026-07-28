@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DroidPilot"
+rootProject.name = "Axisynx"
 include(":app")

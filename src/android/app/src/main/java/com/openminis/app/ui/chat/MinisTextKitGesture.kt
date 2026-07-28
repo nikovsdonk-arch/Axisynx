@@ -627,7 +627,7 @@ data class SelectionToolbarActions(
     val onAddToInput: ((String) -> Unit)? = null,
     /**
      * [T-android-selection-readaloud] Speak the currently-selected plain text
-     * through DroidPilot TTS. Null hides the button. Mirrors iOS's "Read Aloud /
+     * through Axisynx TTS. Null hides the button. Mirrors iOS's "Read Aloud /
      * Read Selection" selection-menu action.
      */
     val onReadAloud: ((String) -> Unit)? = null,
@@ -803,7 +803,7 @@ fun MinisSelectionToolbarHost(
                 }
                 // [T-android-selection-readaloud] Speak ONLY the selected
                 // substring (controller.selectedPlainText(), not the message's
-                // markdown source) through DroidPilot TTS.
+                // markdown source) through Axisynx TTS.
                 if (actions?.onReadAloud != null) {
                     MinisToolbarDivider()
                     MinisToolbarButton(label = labelReadAloud) {

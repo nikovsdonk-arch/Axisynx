@@ -817,7 +817,7 @@ fun ChatScreen(
         // [T-android-overlay-hide-camera] Suppress the floating bg-overlay
         // BEFORE handing off to the system camera. The camera Activity
         // takes foreground, which by #451's rule would otherwise satisfy
-        // "DroidPilot backgrounded → show overlay" and the capsule would draw
+        // "Axisynx backgrounded → show overlay" and the capsule would draw
         // on top of the viewfinder. Cleared in the ActivityResult callback.
         com.openminis.app.service.SessionActivityTracker.setCameraSuppressActive(true)
         runCatching { cameraLauncher.launch(intent) }
@@ -1339,7 +1339,7 @@ fun ChatScreen(
     // [T-android-tool-autoscroll] Start-of-turn edge from ViewModel: resume() /
     // retryLast() / retryFromMessage() / rerunFromToolBlock() emit Unit on
     // forceScrollToBottom because they don't append a new user-message row, so
-    // LE(messages.size) below skips them. Without this collector the "DroidPilot is
+    // LE(messages.size) below skips them. Without this collector the "Axisynx is
     // thinking…" placeholder stays parked behind the input bar until the first
     // streamed token finally bumps the auto-follow tuple.
     LaunchedEffect(listState, viewModel) {
@@ -1956,7 +1956,7 @@ fun ChatScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    // iOS-style centered layout: "DroidPilot" + group row + provider·model row
+                    // iOS-style centered layout: "Axisynx" + group row + provider·model row
                     Box(
                         modifier = Modifier.fillMaxWidth(),
                         contentAlignment = Alignment.Center,
@@ -1993,7 +1993,7 @@ fun ChatScreen(
                             // exists and the toggle is on, else fall back to
                             // the Soul name (matches the input placeholder
                             // "Message <SoulName>"), then to app_name
-                            // ("DroidPilot") as the terminal fallback.
+                            // ("Axisynx") as the terminal fallback.
                             // Tap opens the same SessionEditSheet used from
                             // the session list — drafts return null from
                             // loadSessionEntity so the sheet stays closed.
@@ -2516,7 +2516,7 @@ fun ChatScreen(
                 // in-flight tool is invisible to this predicate → reserve
                 // collapsed to 20dp while a 65dp+6dp floating bar covered
                 // the bottom of the LazyColumn. The new arrivals (status
-                // pill, "DroidPilot is thinking" indicator, inline retry banner) landed
+                // pill, "Axisynx is thinking" indicator, inline retry banner) landed
                 // behind the bar with no way to scroll them into view.
                 //
                 // Fix: also subscribe to streamingById so the predicate
@@ -3109,7 +3109,7 @@ fun ChatScreen(
                                 viewModel.resume()
                                 // T282: same dual-scroll trick as the regular
                                 // send paths (T281). Resume kicks off a fresh
-                                // stream, so the "DroidPilot is thinking" indicator
+                                // stream, so the "Axisynx is thinking" indicator
                                 // mounts a frame or two later — pin once now,
                                 // then again after 100ms so the indicator
                                 // doesn't land below the fold.
@@ -4584,7 +4584,7 @@ fun ChatScreen(
                             }
                         }
                     } else
-                    // Text field (iOS: placeholder "Message DroidPilot", no border)
+                    // Text field (iOS: placeholder "Message Axisynx", no border)
                     run {
                         val interactionSource = remember { MutableInteractionSource() }
                         val mergedTextStyle = MaterialTheme.typography.bodyMedium.copy(

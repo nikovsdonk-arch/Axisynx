@@ -571,9 +571,9 @@ class SkillRepository(private val context: Context) {
         val urlString = existing.sourceURL
         if (urlString.isNullOrBlank()) {
             // Older imports (pre-fix) never persisted the source URL. Users need
-            // to re-import the skill from DroidPilot Skills so the URL gets saved.
+            // to re-import the skill from Axisynx Skills so the URL gets saved.
             return@withContext UpdateResult.Failure(
-                "No source URL on file. Re-import this skill from DroidPilot Skills to enable updates."
+                "No source URL on file. Re-import this skill from Axisynx Skills to enable updates."
             )
         }
 

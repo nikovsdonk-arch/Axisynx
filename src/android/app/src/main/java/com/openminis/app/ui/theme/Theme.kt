@@ -14,7 +14,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-// Indigo/violet accent for the DroidPilot brand
+// Indigo/violet accent for the Axisynx brand
 private val IndigoPrimary = Color(0xFF4F5BD5)
 private val IndigoOnPrimary = Color(0xFFFFFFFF)
 private val IndigoPrimaryContainer = Color(0xFFDFE0FF)

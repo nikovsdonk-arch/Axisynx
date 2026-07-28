@@ -124,7 +124,7 @@ fun SoulSettingsScreen(onBack: () -> Unit) {
                 )
                 Column(modifier = Modifier.padding(start = 4.dp)) {
                     Text(
-                        text = name.ifBlank { "DroidPilot" },
+                        text = name.ifBlank { "Axisynx" },
                         fontSize = 17.sp,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,

@@ -466,7 +466,7 @@ private suspend fun performTest(
                         // speaks in THAT voice, not the vendor default.
                         val data = voice.synthesize(
                             com.openminis.app.provider.voice.VoiceOutputRequest(
-                                input = "Hi! This is DroidPilot testing text to speech.",
+                                input = "Hi! This is Axisynx testing text to speech.",
                                 model = entry.model.id,
                                 voice = entry.model.id,
                             ),
@@ -483,7 +483,7 @@ private suspend fun performTest(
                 if (!voice.supportsVoiceInput) {
                     failure(context.getString(R.string.quicktest_voice_unsupported))
                 } else {
-                    val spoken = "Hello from DroidPilot, testing speech to text."
+                    val spoken = "Hello from Axisynx, testing speech to text."
                     val clip = synthesizeTestClip(context, spoken)
                         ?: return@withContext failure(context.getString(R.string.quicktest_clip_failed))
                     runCatching {
@@ -516,7 +516,7 @@ private suspend fun performTest(
                     messages = listOf(
                         LLMMessage(
                             role = LLMMessage.Role.USER,
-                            content = "Hi! I'm setting you up in DroidPilot. Say hello back in one short, friendly sentence.",
+                            content = "Hi! I'm setting you up in Axisynx. Say hello back in one short, friendly sentence.",
                         ),
                     ),
                     systemPrompt = null,
@@ -535,7 +535,7 @@ private suspend fun performTest(
                 ?: return@withContext failure(context.getString(R.string.quicktest_image_unsupported))
             runCatching {
                 val resp = openAI.generateImage(
-                    prompt = "A friendly cute mascot logo for an app called DroidPilot, minimalist, centered, soft colors",
+                    prompt = "A friendly cute mascot logo for an app called Axisynx, minimalist, centered, soft colors",
                     n = 1,
                     size = "1024x1024",
                     quality = null,

@@ -610,9 +610,9 @@ class MinisApp : Application(), ImageLoaderFactory {
         }
 
         // T268: one-shot migration of pre-T266 internal alarms into the
-        // system Clock app. Pre-T266 builds wrote alarms into DroidPilot's own
+        // system Clock app. Pre-T266 builds wrote alarms into Axisynx's own
         // SharedPreferences + AlarmManager; T266 retired that path but old
-        // installs still have ghost entries that fire only inside DroidPilot.
+        // installs still have ghost entries that fire only inside Axisynx.
         // Replay each future-dated entry through the same SET_ALARM /
         // SET_TIMER intents the new path uses, then clear prefs so the
         // migration runs at most once. Wrapped in runCatching so an

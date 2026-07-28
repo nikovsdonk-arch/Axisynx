@@ -52,7 +52,7 @@ Groups:
 Output: JSON envelope { ok, data | error: { code, message } }.
 Use --compact to emit on a single line; --quiet to strip the envelope.
 
-First-run: enable "DroidPilot" under Settings → Accessibility, then `service ping`.
+First-run: enable "Axisynx" under Settings → Accessibility, then `service ping`.
 """
         private const val SERVICE_HELP = "service status | ping\n"
         private const val UI_HELP = """ui dump | find | info | node | screenshot
@@ -136,7 +136,7 @@ First-run: enable "DroidPilot" under Settings → Accessibility, then `service p
             }
         } catch (e: NotRunning) {
             err(args, "SERVICE_NOT_RUNNING",
-                e.message ?: "Accessibility service is not running. Enable DroidPilot under Settings → Accessibility.",
+                e.message ?: "Accessibility service is not running. Enable Axisynx under Settings → Accessibility.",
                 exit = 77)
         } catch (e: Throwable) {
             AppLogger.warning(TAG, "uncaught: ${e.javaClass.simpleName} ${e.message}")
@@ -164,7 +164,7 @@ First-run: enable "DroidPilot" under Settings → Accessibility, then `service p
                 if (MinisAccessibilityService.getInstance() != null)
                     NativeOffloadResult(0, "✓ Accessibility service is running\n")
                 else
-                    NativeOffloadResult(77, "✗ Accessibility service is not running — go to Settings → Accessibility → DroidPilot to enable\n")
+                    NativeOffloadResult(77, "✗ Accessibility service is not running — go to Settings → Accessibility → Axisynx to enable\n")
             }
             else -> NativeOffloadResult(2, "$TOOL service: unknown action\n$SERVICE_HELP")
         }
@@ -1050,7 +1050,7 @@ First-run: enable "DroidPilot" under Settings → Accessibility, then `service p
 
     private fun svcOrThrow(): MinisAccessibilityService =
         MinisAccessibilityService.getInstance()
-            ?: throw NotRunning("Accessibility service is not running. Enable DroidPilot under Settings → Accessibility.")
+            ?: throw NotRunning("Accessibility service is not running. Enable Axisynx under Settings → Accessibility.")
 
     private fun ok(args: OffloadArgs, data: Any): NativeOffloadResult {
         val body = JSONObject().put("ok", true).put("data", data).toString()

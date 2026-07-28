@@ -1833,7 +1833,7 @@ class OpenAIProvider private constructor(
             // [T-android-default-ua] `defaultUserAgent = null` — keep the
             // codex_cli_rs fingerprint set above when no per-provider
             // override is configured. We must NOT fall back to the branded
-            // DroidPilot UA here: the ChatGPT OAuth backend validates the
+            // Axisynx UA here: the ChatGPT OAuth backend validates the
             // client identity against this header.
             builder.applyUserAgentOverride(customUserAgent, defaultUserAgent = null)
             return builder.build()

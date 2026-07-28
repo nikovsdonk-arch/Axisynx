@@ -1,10 +1,10 @@
-# DroidPilot
+# Axisynx
 
-> **DroidPilot is a fork of [OpenMinis](https://github.com/OpenMinis/OpenMinis)**
+> **Axisynx is a fork of [OpenMinis](https://github.com/OpenMinis/OpenMinis)**
 > with a rebranded Android client (app name, package id, theme and launcher
 > icon). All credit for the underlying product goes to the OpenMinis authors.
 > Per the GPLv3 license, this repository publishes the complete corresponding
-> source code of the distributed DroidPilot builds.
+> source code of the distributed Axisynx builds.
 >
 > Upstream project: https://github.com/OpenMinis/OpenMinis
 > Official website: https://openminis.app

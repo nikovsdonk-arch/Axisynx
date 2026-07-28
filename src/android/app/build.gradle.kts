@@ -33,7 +33,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.droidpilot.agent"
+        applicationId = "com.axisynx.app"
         minSdk = 26
         targetSdk = 35
         versionCode = 20

@@ -154,7 +154,7 @@ class AgentForegroundService : Service() {
         if (com.openminis.app.crash.CrashFrequencyDetector.isSafeMode()) {
             try {
                 val stub = androidx.core.app.NotificationCompat.Builder(this, CHANNEL_ID)
-                    .setContentTitle("DroidPilot")
+                    .setContentTitle("Axisynx")
                     .setSmallIcon(android.R.drawable.stat_sys_warning)
                     .setOngoing(false)
                     .build()
@@ -692,7 +692,7 @@ class AgentForegroundService : Service() {
         )
 
         // T-bg-overlay phase 1: enrich the ongoing notification.
-        // Title:   "DroidPilot is using <Tool>"  (or session-count summary when idle/between turns)
+        // Title:   "Axisynx is using <Tool>"  (or session-count summary when idle/between turns)
         // Text:    one-line "<sessionLabel> · <elapsed>" so the always-visible row stays compact
         // BigText: full status string from SessionActivityTracker.currentToolStatus when expanded
         // Progress: indeterminate while a tool is in flight (isToolRunning), hidden otherwise
@@ -869,15 +869,15 @@ class AgentForegroundService : Service() {
      * so the user still gets a hint about what's running.
      */
     private fun toolDisplayLabel(toolName: String): String = when (toolName) {
-        "shell_execute" -> "DroidPilot is using Shell"
-        "file_read" -> "DroidPilot is reading File"
-        "file_write" -> "DroidPilot is using Editor"
-        "file_edit" -> "DroidPilot is editing File"
-        "browser_use" -> "DroidPilot is using Browser"
-        "read_image" -> "DroidPilot is reading Image"
-        "memory_write", "memory_get" -> "DroidPilot is using Memory"
-        "web_search" -> "DroidPilot is using Search"
-        else -> "DroidPilot is using $toolName"
+        "shell_execute" -> "Axisynx is using Shell"
+        "file_read" -> "Axisynx is reading File"
+        "file_write" -> "Axisynx is using Editor"
+        "file_edit" -> "Axisynx is editing File"
+        "browser_use" -> "Axisynx is using Browser"
+        "read_image" -> "Axisynx is reading Image"
+        "memory_write", "memory_get" -> "Axisynx is using Memory"
+        "web_search" -> "Axisynx is using Search"
+        else -> "Axisynx is using $toolName"
     }
 
     /**

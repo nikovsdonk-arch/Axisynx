@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.asStateFlow
  * State machine:
  *   NOT_INSTALLED      No Shizuku-protocol manager app on device.
  *   NOT_RUNNING        Manager installed but binder not bound.
- *   NEED_PERMISSION    Binder up but DroidPilot not authorized.
+ *   NEED_PERMISSION    Binder up but Axisynx not authorized.
  *   READY              Binder up + permission held — calls work.
  */
 object ShizukuManager {

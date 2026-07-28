@@ -37,11 +37,11 @@ import kotlin.math.abs
  *
  * Adds a small draggable capsule via [WindowManager] using
  * TYPE_APPLICATION_OVERLAY (requires SYSTEM_ALERT_WINDOW). The capsule
- * shows the DroidPilot launcher logo, the running tool's label, and a short
+ * shows the Axisynx launcher logo, the running tool's label, and a short
  * status — same data the FGS notification reads
  * (`SessionActivityTracker.currentToolName` / `currentToolStatus`).
  *
- * T-bg-overlay-polish: the per-tool icon was replaced with the DroidPilot
+ * T-bg-overlay-polish: the per-tool icon was replaced with the Axisynx
  * launcher icon clipped to a circle, a thin stroke ring rotates around
  * the logo while a tool is running, and a small success/error glyph
  * sits next to the tool label once a tool finishes.
@@ -49,12 +49,12 @@ import kotlin.math.abs
  * Owned by [AgentForegroundService]; created on service start, destroyed
  * on service stop. Visibility is driven by the service's collector:
  *
- *   - DroidPilot foreground OR no tool running OR user toggle OFF OR no perm → hidden
+ *   - Axisynx foreground OR no tool running OR user toggle OFF OR no perm → hidden
  *   - otherwise → shown, content updated on each tool-status change
  *
  * Position persists in [com.openminis.app.data.repository.BackgroundSettingsRepository]
  * across process restarts; first run defaults to the bottom-left corner
- * (10 dp from each edge). Tap dismisses to bring DroidPilot back to the
+ * (10 dp from each edge). Tap dismisses to bring Axisynx back to the
  * foreground; drag moves the capsule.
  */
 class ToolOverlayController(private val context: Context) {
@@ -456,7 +456,7 @@ class ToolOverlayController(private val context: Context) {
         // when the model didn't supply a title.
         // [T-android-overlay-no-idle] After a tool completes, SessionActivityTracker
         // resets currentToolStatus to "Idle" and toolName to null — flowing that
-        // through verbatim would render a noisy "DroidPilot / Idle" capsule that
+        // through verbatim would render a noisy "Axisynx / Idle" capsule that
         // tells the user nothing. When not running and we have neither a
         // toolTitle nor a real toolName, hide both the label and the status
         // row so only the reply excerpt (if any) plus glyph remain.
@@ -746,11 +746,11 @@ class ToolOverlayController(private val context: Context) {
 
     /**
      * Mirrors [AgentForegroundService.toolDisplayLabel] but trims the
-     * "DroidPilot is using " prefix — the overlay capsule is tight, so we just
+     * "Axisynx is using " prefix — the overlay capsule is tight, so we just
      * show the tool kind ("Shell", "Browser", …).
      */
     private fun toolDisplayLabel(toolName: String?): String = when (toolName) {
-        null -> "DroidPilot"
+        null -> "Axisynx"
         "shell_execute" -> "Shell"
         "file_read" -> "File"
         "file_write" -> "Editor"

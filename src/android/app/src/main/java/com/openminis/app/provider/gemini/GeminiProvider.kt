@@ -62,7 +62,7 @@ class GeminiProvider(
             .url(url)
             .post(body.toString().toRequestBody("application/json".toMediaType()))
             // [T-android-default-ua] Brand the outbound UA so server logs
-            // can trace the request back to the DroidPilot build. Gemini has no
+            // can trace the request back to the Axisynx build. Gemini has no
             // SDK-specific UA requirement, so the helper's default kicks in.
             .applyUserAgentOverride(null)
             .build()
@@ -109,7 +109,7 @@ class GeminiProvider(
             .url(url)
             .post(body.toString().toRequestBody("application/json".toMediaType()))
             // [T-android-default-ua] same intent as the non-streaming
-            // branch above — brand outbound requests with DroidPilot/<version>.
+            // branch above — brand outbound requests with Axisynx/<version>.
             .applyUserAgentOverride(null)
             .build()
 

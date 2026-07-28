@@ -75,7 +75,7 @@ internal fun toolIconFor(toolName: String) = when (toolName) {
     else -> Icons.Default.Build
 }
 
-// Helper: tool display name for "DroidPilot is using X"
+// Helper: tool display name for "Axisynx is using X"
 internal fun toolDisplayName(toolName: String): String = when (toolName) {
     "shell_execute" -> "terminal"
     "file_read" -> "file reader"
@@ -90,19 +90,19 @@ internal fun toolDisplayName(toolName: String): String = when (toolName) {
 }
 
 /**
- * Full "DroidPilot is …" label shown in the tool detail sheet's bottom bar.
+ * Full "Axisynx is …" label shown in the tool detail sheet's bottom bar.
  * Mirrors iOS ToolLiveSheet.toolTitle so the wording matches per tool.
  */
 internal fun toolTitleLabel(toolName: String): String = when (toolName) {
-    "shell_execute" -> "DroidPilot is using Shell"
-    "file_read" -> "DroidPilot is reading File"
-    "file_write" -> "DroidPilot is using Editor"
-    "file_edit" -> "DroidPilot is editing File"
-    "browser_use" -> "DroidPilot is using Browser"
-    "read_image" -> "DroidPilot is reading Image"
-    "memory_write", "memory_get" -> "DroidPilot is using Memory"
-    "web_search" -> "DroidPilot is using Search"
-    else -> "DroidPilot is using ${toolDisplayName(toolName)}"
+    "shell_execute" -> "Axisynx is using Shell"
+    "file_read" -> "Axisynx is reading File"
+    "file_write" -> "Axisynx is using Editor"
+    "file_edit" -> "Axisynx is editing File"
+    "browser_use" -> "Axisynx is using Browser"
+    "read_image" -> "Axisynx is reading Image"
+    "memory_write", "memory_get" -> "Axisynx is using Memory"
+    "web_search" -> "Axisynx is using Search"
+    else -> "Axisynx is using ${toolDisplayName(toolName)}"
 }
 
 // Helper: format duration (iOS: < 1s → "0.1s", < 60s → "45s", >= 60s → "2m 10s")

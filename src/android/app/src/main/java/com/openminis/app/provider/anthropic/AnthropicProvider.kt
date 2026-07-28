@@ -967,7 +967,7 @@ class AnthropicProvider(
 
         // [T-provider-custom-user-agent] Applied last so a non-blank override
         // wins over the OAuth claude-cli UA above. null/blank → fall back to
-        // the branded DroidPilot UA on the regular apiKey path, but on the OAuth
+        // the branded Axisynx UA on the regular apiKey path, but on the OAuth
         // path keep the claude-cli/2.1.195 fingerprint set at line ~779 (the
         // Anthropic OAuth backend pairs UA + X-Stainless-* and rejects calls
         // whose UA doesn't match the registered client identity). T-android-
