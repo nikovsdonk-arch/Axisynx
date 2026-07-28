@@ -307,6 +307,22 @@ install_asset() {
     mkdir -p "$JNILIBS_DIR"
     install -m 0755 "$BUILT_PROOT" "$JNILIBS_BIN"
     log_success "Installed: $JNILIBS_BIN ($(du -h "$JNILIBS_BIN" | awk '{print $1}'))"
+
+    # The app loads the proot loaders directly from nativeLibraryDir
+    # (PRootKernel.kt expects libproot-loader.so / libproot-loader32.so
+    # alongside libproot.so) — ship them as separate JNI libs too.
+    local loader="$PROOT_DIR/src/loader/loader"
+    local loader32="$PROOT_DIR/src/loader/loader-m32"
+    if [ -f "$loader" ]; then
+        install -m 0755 "$loader" "$JNILIBS_DIR/libproot-loader.so"
+        log_success "Installed: $JNILIBS_DIR/libproot-loader.so"
+    else
+        log_error "loader missing at $loader — the sandbox will not start without libproot-loader.so"
+    fi
+    if [ -f "$loader32" ]; then
+        install -m 0755 "$loader32" "$JNILIBS_DIR/libproot-loader32.so"
+        log_success "Installed: $JNILIBS_DIR/libproot-loader32.so"
+    fi
 }
 
 # ----------------------------------------------------------------------------
